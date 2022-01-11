@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>ピクセルのエディター</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body onmousemove="updateBrushPos(event)">
+        
+        <div id="topEditor">
+            <u style="font-size: 25px;">ツール</u>
+            <br>
+            <p id="bitCount">ビット: </p>
+            <input type="range" min="8" max="64" value="16" id="bitSelection" onclick="adjustScreen()">
+            <p id="colChose">色: 
+            <input type="color" value="#00FF00" id="brushStyle">
+            </p>
+        <p>フィル: <img id="fillBucket" alt="" style="position: absolute;" width="24" height="24" onmouseover="this.src = 'img/bucket_hover.png'" onmouseout="this.src = 'img/bucket.png'" src="img/bucket.png"></p>
+            <p>絵筆: <img style="position: absolute;" src="img/brush.png" onmouseover="this.src = 'img/brush_hover.png'" onmouseout="this.src = 'img/brush.png'" width="24" height="24"></p>
+            <p>消しゴム:  <img style="position: absolute;" src="img/rubber.png" onmouseover="this.src = 'img/rubber_hover.png'" onmouseout="this.src = 'img/rubber.png'" width="24" height="24"> </p>
+        
+        
+        
+        
+        
+        
+            -------------------
+        <br>
+<img src="img/undo.png" onmouseover="this.src = 'img/undo_hover.png'" onmouseout="this.src = 'img/undo.png'" width="24" height="24">
+   
+          <img src="img/redo.png" style="position: absolute;" onmouseover="this.src = 'img/redo_hover.png'" onmouseout="this.src = 'img/redo.png'" width="24" height="24">
+        
+
+        </div>
+
+        <div id="centralHeader">
+            <p>
+                <u style="font-size: 25px;">ファイル前</u>
+            </p>    
+            <input id="fileName" placeholder="pixel_art.png" spellcheck="false">
+        </div>
+
+        
+        <div id="centralEditor" oncontextmenu="stopDraw(event)" onmousedown="drawPixels(event), updateBrushPos(event)" onmouseup="stopDraw(event)" onclick="drawPixels(event), stopDraw(event)">
+            <center>
+                <canvas style="z-index: 1;"></canvas>
+                <canvas style="position: absolute; z-index: -1;"></canvas><br>
+                
+                
+                <a id="download"><button onclick="save()">ダウンロード</button></a>
+            </center>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+
+
+
+    <noscript>Please enable javascript to use the editor.</noscript>
+</html>

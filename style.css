@@ -1,0 +1,68 @@
+body
+{
+    background: linear-gradient(to bottom, rgb(50, 70, 168), rgb(27, 39, 97));
+    overflow: hidden;
+    font-family: 'DotGothic16', sans-serif;
+    color: white;
+}
+button
+{
+    font-family: 'DotGothic16', sans-serif;
+    color: white;
+    background-color: lime;
+    border: 5px solid white;
+    font-size: 50px;
+}
+button:hover
+{
+    background-color: white;
+    color: lime;
+    border: 5px solid lime;
+    cursor: pointer;
+}
+#centralEditor
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    align-content: center;
+}
+#topEditor
+{
+    position: absolute;
+    margin: 0;
+    top: 5%;
+    padding-top: 0px;
+    border: 1px solid white;
+}
+#fillBucket:hover
+{
+    src: url("img/bucket_hover.png");
+}
+#centralHeader
+{
+    text-align: center;
+    position: absolute;
+    background: transparent;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+#fileName
+{
+    background: transparent;
+    text-align: center;
+    color: white;
+    font-family: 'DotGothic16', sans-serif;
+    border: none;
+}
+#fileName::placeholder
+{    
+    font-family: 'DotGothic16', sans-serif;
+    color: white;
+}
+#fileName:focus{
+    border: none;
+    outline: none;
+}
