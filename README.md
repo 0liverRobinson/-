@@ -1,4 +1,4 @@
 # ドット絵のエディターです
-![readmeImg](https://user-images.githubusercontent.com/50546763/148992444-07a5f6e0-e91f-4e36-8566-f2ae413f5cef.JPG)
+![image](https://user-images.githubusercontent.com/50546763/148992960-54f8a03e-fd2b-4f29-90d4-75e9ab5268a6.png)
 
 javascriptでドット絵のエディターです
