@@ -28,6 +28,7 @@ let currentColor = brushStyle.value;
 let picture = [[]];
 let match = false;
 
+let scale = 2;
 
 
 function adjustScreen()
@@ -42,7 +43,7 @@ function adjustScreen()
     document.body.style.width = window.innerWidth + "px";
     document.body.style.height = window.innerHeight + "px";
     
-    background.height = background.width = canvas.height = canvas.width = Math.round(Math.round( ( window.innerHeight/ 2 ) / bits) * bits);
+    background.height = background.width = canvas.height = canvas.width = Math.round(Math.round( ( window.innerHeight/ scale ) / bits) * bits);
     canvas.style.border= background.style.border = CANVASBORDER + "px solid white";
     background.style.left = "0px";
     background.style.top =  "0px";
