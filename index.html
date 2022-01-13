@@ -19,10 +19,10 @@
             <p id="colChose">色: 
             <input type="color" value="#00FF00" id="brushStyle">
             </p>
-        <p>フィル: <img id="fillBucket" alt="" style="position: absolute;" width="24" height="24" onmouseover="this.src = 'img/bucket_hover.png'" onmouseout="this.src = 'img/bucket.png'" src="img/bucket.png"></p>
-            <p>絵筆: <img style="position: absolute;" src="img/brush.png" onmouseover="this.src = 'img/brush_hover.png'" onmouseout="this.src = 'img/brush.png'" width="24" height="24"></p>
-            <p>消しゴム:  <img style="position: absolute;" src="img/rubber.png" onmouseover="this.src = 'img/rubber_hover.png'" onmouseout="this.src = 'img/rubber.png'" width="24" height="24"> </p>
-        
+        <p>フィル: <img id="fillBucket" alt="" style="position: absolute;" width="24" height="24" onmouseover="hoverChange(this, true)" onmouseout="hoverChange(this, false)" src="img/bucket.png"></p>
+            <p>絵筆: <img style="position: absolute;" src="img/brush.png" onmouseover="hoverChange(this, true)" onmouseout="hoverChange(this, false)" width="24" height="24"></p>
+            <p>消しゴム: <img style="position: absolute;" src="img/rubber.png" onmouseover="hoverChange(this, true)" onmouseout="hoverChange(this, false)" width="24" height="24"> </p>
+            
         
         
         
@@ -31,8 +31,8 @@
             -------------------
         <br>
 
-            <img src="img/undo.png" onmouseover="this.src = 'img/undo_hover.png'" onmouseout="this.src = 'img/undo.png'" width="24" height="24">
-            <img src="img/redo.png" style="position: absolute;" onmouseover="this.src = 'img/redo_hover.png'" onmouseout="this.src = 'img/redo.png'" width="24" height="24">
+            <img src="img/undo.png" onmouseover="hoverChange(this, true)" onmouseout="hoverChange(this, false)" width="24" height="24">
+            <img src="img/redo.png" style="position: absolute;" onmouseover="hoverChange(this, true)" onmouseout="hoverChange(this, false)" width="24" height="24">
         
         </div>
 
@@ -44,7 +44,9 @@
         </div>
 
         
-        <div id="centralEditor" oncontextmenu="stopDraw(event)" onmousedown="drawPixels(event), updateBrushPos(event)" onmouseup="stopDraw(event)" onclick="drawPixels(event), stopDraw(event)">
+        <div id="centralEditor" oncontextmenu="stopDraw(event)" onmousedown="drawPixels(event), updateBrushPos(event)" onmouseup="stopDraw(event)" onclick="drawPixels(event), stopDraw(event)"
+        ontouchstart="drawPixels(event)" ontouchend="stopDraw(event)"
+        >
             <center>
                 <canvas style="z-index: 1;"></canvas>
                 <canvas style="position: absolute; z-index: -1;"></canvas><br>
